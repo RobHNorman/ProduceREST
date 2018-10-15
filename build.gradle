@@ -1,0 +1,76 @@
+
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+          url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath "com.github.samueltbrown:gradle-cucumber-plugin:0.7"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.5.RELEASE"
+
+    }
+}
+
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "org.springframework.boot"
+apply plugin: "io.spring.dependency-management"
+apply plugin: "com.github.samueltbrown.cucumber"
+
+bootJar {
+	baseName = 'ProduceREST'
+	version =  '0.0.1'
+}
+sourceSets {
+	main {
+		java {
+			srcDirs = ["src/main/java"]
+		}
+		resources {
+			srcDirs = ["src/main/resources"]
+		}
+	}
+	test {
+		java {
+			srcDirs = ["src/test/java"]
+		}
+		resources {
+			srcDirs = ["src/test/resources"]
+		}
+	}
+	cucumber {
+		java {
+			srcDirs = ["src/cucumber/java"]
+		}
+		resources {
+			srcDirs = ["src/cucumber/resources"]
+		}
+	}
+}
+
+repositories {
+    jcenter()
+	mavenLocal()
+}
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web"
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+    compile "org.springframework.boot:spring-boot-starter-data-mongodb"
+  	compile "info.cukes:cucumber-java:1.2.0"
+	compile "de.flapdoodle.embed:de.flapdoodle.embed.mongo:2.1.1"
+	compile 'io.rest-assured:rest-assured:3.1.1'
+	compile 'junit:junit:4.12'
+}
+cucumber {
+	formats = ["pretty","json:build/cucumber.json","junit:build/cucumber.xml"]
+	glueDirs = ["src/cucumber/java"]
+	featureDirs = ["src/cucumber/resources"]
+	tags = ["~@wip"]
+	monochrome = false
+	strict = false
+	dryRun = false
+
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="0.619923">
+<testcase classname="Produce" name="Produce" time="0.619923">
+<system-out><![CDATA[Given I post 'src/cucumber/resources/input.json' to "/produce"..............passed
+When I call "/produce"......................................................passed
+Then I get the response.....................................................passed
+]]></system-out>
+</testcase>
+</testsuite>

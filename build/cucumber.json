@@ -1,0 +1,140 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "Produce",
+        "description": "",
+        "id": "produce;produce",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 427209000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I post \u0027src/cucumber/resources/input.json\u0027 to \"/produce\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "src/cucumber/resources/input.json",
+                  "offset": 8
+                },
+                {
+                  "val": "/produce",
+                  "offset": 47
+                }
+              ],
+              "location": "ProduceStepDefs.i_post_the(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 20194000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I call \"/produce\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/produce",
+                  "offset": 8
+                }
+              ],
+              "location": "ProduceStepDefs.i_call_the(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 172520000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I get the response",
+            "match": {
+              "location": "ProduceStepDefs.i_get_the_response(Produce\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "price",
+                  "stock"
+                ],
+                "line": 7
+              },
+              {
+                "cells": [
+                  "banana",
+                  "0.29",
+                  "20"
+                ],
+                "line": 8
+              },
+              {
+                "cells": [
+                  "apple",
+                  "1.54",
+                  "22"
+                ],
+                "line": 9
+              },
+              {
+                "cells": [
+                  "melon",
+                  "1.01",
+                  "3"
+                ],
+                "line": 10
+              },
+              {
+                "cells": [
+                  "pear",
+                  "0.41",
+                  "12"
+                ],
+                "line": 11
+              },
+              {
+                "cells": [
+                  "orange",
+                  "2.04",
+                  "19"
+                ],
+                "line": 12
+              },
+              {
+                "cells": [
+                  "kumquat",
+                  "0.64",
+                  "32"
+                ],
+                "line": 13
+              },
+              {
+                "cells": [
+                  "lemon",
+                  "1.56",
+                  "9"
+                ],
+                "line": 14
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Produce",
+    "description": "",
+    "id": "produce",
+    "keyword": "Feature",
+    "uri": "Produce.feature"
+  }
+]
